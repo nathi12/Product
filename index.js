@@ -14,12 +14,9 @@ app.use(methodOverride('_method'));
  * database connections
  */
 const mongoose = require('mongoose');
-const localURLDB = 'mongodb://127.0.0.1:27017/ProductDB'
-const AltlasURL = 'mongodb+srv://nathisamukelo90:mongodb2023@cluster0.irjuyqv.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(process.env.local_DB)
+mongoose.connect(process.env.PROD_DB)
     .then(() => {
         console.log('mongo connection open');
-        console.log(process.env.local_DB);
     })
     .catch((err) => {
         console.log('mongo error');

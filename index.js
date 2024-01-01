@@ -14,13 +14,14 @@ app.use(methodOverride('_method'));
  * database connections
  */
 const mongoose = require('mongoose');
-mongoose.connect(process.env.PROD_DB)
+mongoose.connect('mongodb+srv://nathisamukelo90:mongodb2023@cluster0.irjuyqv.mongodb.net/?retryWrites=true&w=majority')
     .then(() => {
         console.log('mongo connection open');
     })
     .catch((err) => {
         console.log('mongo error');
         console.log(err);
+        //process.env.PROD_DB
     })
 
 /**

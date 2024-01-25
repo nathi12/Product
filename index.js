@@ -12,9 +12,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
 
 /**
- * database connections process.env.PROD_DB
+ * database connections process.env.PROD_DB PROD_DB
  */
-mongoose.connect(process.env.PROD_DB)
+const Database = process.env.PROD_DB;
+mongoose.connect(Database)
     .then(() => {
         console.log('mongo connection open');
     })

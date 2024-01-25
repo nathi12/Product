@@ -8,4 +8,4 @@
   * ejs
 * MongoDB
 
-TRY IT OUT,CLICK <a href="https://product-crud-2.onrender.com"  target="_blank">HERE</a>
+TRY IT OUT,CLICK <a href="https://product-crud-2.onrender.com/products"  target="_blank">HERE</a>

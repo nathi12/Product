@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
+const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Product = require('./models/product');
 const port = 3000;
@@ -11,10 +12,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'));
 
 /**
- * database connections
+ * database connections process.env.PROD_DB
  */
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://nathisamukelo90:mongodb2023@cluster0.irjuyqv.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.PROD_DB)
     .then(() => {
         console.log('mongo connection open');
     })
